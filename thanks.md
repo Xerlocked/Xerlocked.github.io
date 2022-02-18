@@ -1,9 +1,9 @@
 ---
-title: Acknowledgment
+title: Thanks to..
 permalink: /thanks/
 layout: page
 excerpt: Thanks to
 comments: false
 ---
 
-하나씩 채워가보겠습니다.
+한 분씩 채워가보겠습니다.

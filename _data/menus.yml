@@ -1,12 +1,12 @@
-- title: home
+- title: 홈
   url: /
   external: false
 
-- title: archive
+- title: 아카이브
   url: /archive/
   external: false
 
-- title: about
+- title: 어바웃
   url: /about/
   external: false # set true if you using external link, see below
 
