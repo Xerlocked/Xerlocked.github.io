@@ -28,6 +28,8 @@ tag:
 ## 2. 두 파일 사이의 사이클 끊기
 - 순방향 선언은 두 파일 사이의 사이클을 끊는데 유용합니다.   
 
+{% gist d223eec04f43074031f12f0f768a6534 %}
+
 ~~~C++
 #include "Wheel.h"  // Include Wheel's definition so it can be used in Car.
 #include <vector>
