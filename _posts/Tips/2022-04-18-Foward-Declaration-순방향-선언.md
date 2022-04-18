@@ -30,25 +30,9 @@ tag:
 
 {% gist d223eec04f43074031f12f0f768a6534 %}
 
-~~~C++
-#include "Wheel.h"  // Include Wheel's definition so it can be used in Car.
-#include <vector>
+<br>
 
-class Car
-{
-    std::vector<Wheel> wheels;
-};
-// car.h
-~~~
-
-~~~C++
-class Car;     // forward declaration
-
-class Wheel
-{
-    Car* car;
-};
-~~~
+{% gist b0ac7c991de647ef41ffd8e54b0735e3 %}
 
 Wheel이 Car에 대한 포인터를 가지고 있기 때문에 Car 선언이 필요하지만,   
 
