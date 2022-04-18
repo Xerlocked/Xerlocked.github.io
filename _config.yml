@@ -12,7 +12,7 @@ mode: dark # default theme "dark" | "light"
 author:
   name: Xerlock # author name
   bio: >- # tell to the world
-    게임 개발자 / 1998.04.07 <a href="https://github.com/xerlock" target="_blank" rel="xerlock">@github</a>.
+    게임 개발자 / 1998.04.07 <a href="https://github.com/xerlocked" target="_blank" rel="xerlock">@github</a>.
   username: xerlock # general username
   github: Xerlocked # github username
   twitter: no_twitter # twitter username
