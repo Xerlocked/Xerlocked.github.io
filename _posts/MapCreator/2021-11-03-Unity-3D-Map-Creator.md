@@ -50,14 +50,15 @@ Unity 3.14f
 
 ### 3. 실전
 
-> Editor코드를 작성하기 위해선, Asset폴더 밑, 원하는 곳에 Editor폴더를 만들고 작업을 해야 됩니다.
+> Editor코드를 작성하기 위해선,  
+> Asset폴더 밑, 원하는 곳에 Editor폴더를 만들고 작업을 해야 됩니다.
 
 {% gist 989188a0c42c9965bbb2a3adc29ee020 %}
 
 코드를 작성 후, 유니티 에디터 상단 탭을 보면 TileEditor라는 탭이 생겨져 있습니다. 탭을 선택 후, ShowEditor를 선택하면
 
 <figure>
-<img src="/assets/img/MapCreator/3png" alt="3">
+<img src="/assets/img/MapCreator/3.png" alt="3">
 <figcaption></figcaption>
 </figure>
 
@@ -68,6 +69,6 @@ Unity 3.14f
 {% gist a3da3d2694593b3c4f92479aec3038d7 %}
 
 <figure>
-<img src="/assets/img/MapCreator/4png" alt="4">
+<img src="/assets/img/MapCreator/4.png" alt="4">
 <figcaption></figcaption>
 </figure>
