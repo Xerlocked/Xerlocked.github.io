@@ -69,7 +69,7 @@ private void OnSceneGUI(SceneView view)
 위 함수는 위치를 표시해주는 함수입니다.  
 이제 이 함수를 duringSceneGui에 등록하주어야 합니다.  
 그럼, Editor 창이 포커스될 때 호출되어집니다.
-```
+```C#
 private void OnFocus()
 {
     SceneView.duringSceneGui -= this.OnSceneGUI;
@@ -80,7 +80,7 @@ private void OnFocus()
 ### 4. 표시하기
 아까 위에서 구한 마우스 좌표로 선을 그려보겠습니다.
 
-```
+```C#
 
 // Vertices of our square
 Vector3 topLeft = cellCenter + Vector2.left * cellSize * 0.5f + Vector2.up * cellSize * 0.5f;  
@@ -118,7 +118,7 @@ Handles.DrawLines(lines);
 로그를 확인해보니, Z값은 0으로 고정되고 Y값이 변화됩니다.
 이를 이용하여 Y 와 Z의 Swap을 진행하면 될 것 같습니다.
 
-```
+```C#
 
 // Vertices of our square
 Vector3 topLeft = cellCenter + Vector2.left * cellSize * 0.5f + Vector2.up * cellSize * 0.5f;
