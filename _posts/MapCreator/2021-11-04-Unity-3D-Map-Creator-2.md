@@ -23,7 +23,7 @@ Unity 3.14f
 SceneView에서 마우스 좌표를 얻기 위한 방법 중 가장 쉬운 방법은
 Ray를 쏴 마우스 좌표를 얻어오는 것입니다.
 
-```C#
+```cs
 
 Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);  
 
@@ -36,7 +36,7 @@ ray.origin으로 ray의 원점을 얻어오고, y값의 direction을 지워줍�
 
 이렇게 얻은 마우스 위치를 그리드의 Cell 항목에 대해 Vector2로 변환하여 값을 반올림해줍니다.
 
-```C#
+```cs
 
 Vector2Int cell = new Vector2Int(Mathf.RoundToInt(mousePosition.x / cellSize.x),
             Mathf.RoundToInt(mousePosition.z / cellSize.y));
@@ -50,7 +50,7 @@ return cell * cellSize;
 SceneView에서 일어나는 변화를 실시간으로 반영하기 위해
 이벤트를 등록하고 사용하도록 합니다.
 
-```C#
+```cs
 
 private void OnSceneGUI(SceneView view)
 {
@@ -68,8 +68,9 @@ private void OnSceneGUI(SceneView view)
 
 위 함수는 위치를 표시해주는 함수입니다.  
 이제 이 함수를 duringSceneGui에 등록하주어야 합니다.  
-그럼, Editor 창이 포커스될 때 호출되어집니다.
-```C#
+그럼, Editor 창이 포커스될 때 호출되어집니다.  
+
+```cs
 private void OnFocus()
 {
     SceneView.duringSceneGui -= this.OnSceneGUI;
@@ -80,7 +81,7 @@ private void OnFocus()
 ### 4. 표시하기
 아까 위에서 구한 마우스 좌표로 선을 그려보겠습니다.
 
-```C#
+```cs
 
 // Vertices of our square
 Vector3 topLeft = cellCenter + Vector2.left * cellSize * 0.5f + Vector2.up * cellSize * 0.5f;  
@@ -118,7 +119,7 @@ Handles.DrawLines(lines);
 로그를 확인해보니, Z값은 0으로 고정되고 Y값이 변화됩니다.
 이를 이용하여 Y 와 Z의 Swap을 진행하면 될 것 같습니다.
 
-```C#
+```cs
 
 // Vertices of our square
 Vector3 topLeft = cellCenter + Vector2.left * cellSize * 0.5f + Vector2.up * cellSize * 0.5f;

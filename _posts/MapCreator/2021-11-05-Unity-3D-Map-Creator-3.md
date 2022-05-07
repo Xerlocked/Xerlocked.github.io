@@ -63,7 +63,7 @@ private void RefreshPalette()
 
 먼저 썸네일을 저장할 리스트를 만듭니다.  
 
-```C#
+```cs
 List<GUIContent> paletteIcons = new List<GUIContent>();
 
 foreach (GameObject prefab in palette)
@@ -82,7 +82,7 @@ List를 GUIContent 형태로 저장하는 이유는 나중에 사용할 SelectGr
 
 이 메소드를 사용하는 이유는 콘텐츠를 표시할 뿐아니라 우리가 선택한 콘텐츠의 인덱스를 반환해주기 때문에 사용하게 되었습니다.  
 
-```C#
+```cs
 
 [SerializeField] 
 private int paletteIndex;
@@ -105,7 +105,7 @@ GUI에 가져온 프리팹이 나타나는 것을 볼 수 있습니다.
 생성을 하기 위해서는 사용자가 마우스를 눌렀는지 판단해야 합니다.
 이는 Event 클래스를 이용하여 판단할 수 있습니다.
 
-```C#
+```cs
 if (Event.current.type == EventType.Layout)
 {
 	HandleUtility.AddDefaultControl(0);
@@ -113,7 +113,7 @@ if (Event.current.type == EventType.Layout)
 ```
 해당 코드를 통해 SceneView에 마우스의 입력이 들어왔는지 판단하게 됩니다.
 
-```C#
+```cs
 if (paletteIndex < palette.Count && 
             Event.current.type == EventType.MouseDown && 
             Event.current.button == 0)
