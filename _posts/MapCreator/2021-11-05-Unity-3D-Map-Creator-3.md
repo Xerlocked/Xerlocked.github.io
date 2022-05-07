@@ -25,7 +25,7 @@ Unity 3.14f
 
 프리팹은 삽입 삭제가 자유로운 List 형태로 저장하고, 폴더의 경로는 문자열이므로 다음과 같은 코드를 사용하겠습니다.  
 
-```C#
+```cs
 [SerializeField] 
 private List<GameObject> palette = new List<GameObject>();  
 string path = "Assets/MapCreator/Prefabs";
@@ -33,7 +33,7 @@ string path = "Assets/MapCreator/Prefabs";
 
 생성한 리스트에 자료를 넣어주기 위해 다음과 같은 메소드를 작성합니다.  
 
-```C#
+```cs
 private void RefreshPalette()
 {
     palette.Clear();
