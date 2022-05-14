@@ -156,17 +156,16 @@ using UnityEngine;
 [CustomEditor(typeof(TileSpawner))] // TileSpawner 컴포넌트가 있다면 사용
 public class TileSpawnerEditor : Editor
 {
-		private TileSpawner Spawner => (TileSpawner) target; // Object being inspector
+	private TileSpawner Spawner => (TileSpawner) target; // Object being inspector
 		 
-		protected void OnSceneGUI()
-		{
-				Handles.BeginGUI();
+	protected void OnSceneGUI()
+    {
+		Handles.BeginGUI();
         {
             toolMode = (ToolModes)GUI.Toolbar(new Rect(10, 10, 200, 30), (int)toolMode, new[] {"Move", "Building", "Drawing"});
         }
         Handles.EndGUI();
-		}
-
+	}
 }
 ```
 
@@ -182,11 +181,11 @@ Tools 클래스는 Unity SceneView의 도구들을 컨트롤하기 위해 사용
 ```csharp
 if (toolMode == ToolModes.Move)
 {
-		if (Tools.current == Tool.None)
-		{
-				Tools.current = Tool.Move;
-		}
-		return;
+    if (Tools.current == Tool.None)
+	{
+		Tools.current = Tool.Move;
+	}
+	return;
 }
 
 Tools.current = Tool.None;
