@@ -126,8 +126,79 @@ if (paletteIndex < palette.Count &&
 
 이후, 마우스가 눌러졌고 왼쪽버튼일 경우 해당 위치에 프리팹을 생성하게 됩니다.
 
-
 <figure>
 <img src="/assets/img/MapCreator/3-3.gif" alt="3">
 <figcaption></figcaption>
 </figure>
+
+---
+
+<figure>
+<img src="/assets/img/MapCreator/4-1.png" alt="4">
+<figcaption>GUI 인터페이스 예</figcaption>
+</figure>
+
+### 4. GUI WINDOW  
+
+지금까지 윈도우 패널형태를 이용하여 SceneView를 컨트롤했습니다.  
+이제부터는 GUI.Window 형태로 SceneView에 플로팅된 형태의 GUI로 작업하겠습니다. 
+
+<figure>
+<img src="/assets/img/MapCreator/4-2.png" alt="5">
+<figcaption>플로팅</figcaption>
+</figure>
+
+### 5. CustomEditor
+
+```csharp
+using UnityEditor;
+using UnityEngine;
+[CustomEditor(typeof(TileSpawner))] // TileSpawner 컴포넌트가 있다면 사용
+public class TileSpawnerEditor : Editor
+{
+		private TileSpawner Spawner => (TileSpawner) target; // Object being inspector
+		 
+		protected void OnSceneGUI()
+		{
+				Handles.BeginGUI();
+        {
+            toolMode = (ToolModes)GUI.Toolbar(new Rect(10, 10, 200, 30), (int)toolMode, new[] {"Move", "Building", "Drawing"});
+        }
+        Handles.EndGUI();
+		}
+
+}
+```
+
+OnSceneGUI 메소드는 유니티에서 제공하는 함수로 SceneView에 GUI를 나타낼 때 사용합니다.  
+해당 메소드를 사용하기 위해서는 Editor를 상속 받아야합니다.  
+Handles를 이용해 UnityEditor를 컨트롤 할 수 있습니다.  
+
+### 6. Tools
+
+Tools 클래스는 Unity SceneView의 도구들을 컨트롤하기 위해 사용되는 클래스입니다.
+>> [Tools](https://docs.unity3d.com/ScriptReference/Tools.html) 바로가기
+
+```csharp
+if (toolMode == ToolModes.Move)
+{
+		if (Tools.current == Tool.None)
+		{
+				Tools.current = Tool.Move;
+		}
+		return;
+}
+
+Tools.current = Tool.None;
+HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
+```
+
+해당코드를 이용하여 마우스 입력을 조작합니다.
+
+Tool을 None 상태로 바꾸고 HandleUtility.AddDefaultControl을 통해 기본 컨트롤을 가져옵니다.  
+이떄, 가져오는 ControlID가 FocusType.Passive로 
+이 FocusType은 키보드 입력에 대해 무시하는 FocusType입니다.
+  
+결국 이것이 의미하는 것은, GUI Window의 포커스를 유지하기 위함입니다.
+
+>> [해당 커밋 바로가기](https://github.com/Xerlocked/TileMapEditor/commit/262268a56a88c13f536a4b2212bda30fd734f6d6)
