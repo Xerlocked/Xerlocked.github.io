@@ -147,7 +147,7 @@ tags: unreal
 모듈 스크립터에 대한 것은 다음 링크에서 확인하실 수 있습니다.
 [FModuleDescriptor](https://dev.epicgames.com/documentation/ko-kr/unreal-engine/API/Runtime/Projects/FModuleDescriptor?application_version=5.0)
 
-실실버바인 플러그인의 모듈은 크게 세 가지로 나눌 수 있습니다. `Lua`, `LuaEditor`, `LuaCodeGen` 입니다.
+실버바인 플러그인의 모듈은 크게 세 가지로 나눌 수 있습니다. `Lua`, `LuaEditor`, `LuaCodeGen` 입니다.
 
 이들 각각의 기능을 살펴보면 다음과 같습니다.
 
