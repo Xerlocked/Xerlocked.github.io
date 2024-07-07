@@ -1,7 +1,6 @@
 # Site settings
 title:          xerlocked
-description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/locked"
+description:    "xerlock의 게임 개발 이야기"
 url:            "https://xerlocked.github.io"
 
 # Google Analytics
