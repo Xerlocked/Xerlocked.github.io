@@ -86,7 +86,7 @@ tags: unreal
 {% endhighlight %}
 
 파일 포맷의 키 값은 다음 API 레퍼런스를 따릅니다.
-[FPluginDescriptor] (https://dev.epicgames.com/documentation/ko-kr/unreal-engine/API/Runtime/Projects/FPluginDescriptor?application_version=5.0)
+[FPluginDescriptor](https://dev.epicgames.com/documentation/ko-kr/unreal-engine/API/Runtime/Projects/FPluginDescriptor?application_version=5.0)
 
 아마 마지막 5개의 키 값을 제외하곤 어떤 값을 입력해야 할 지 알아보실 수 있을 겁니다. 그러면 5개만 빠르게 설명하겠습니다.
 
@@ -124,22 +124,23 @@ tags: unreal
 
 {% highlight json %}
 {
-  "FileVersion": 3,
-  "Version": 1,
-  "VersionName": "0.1.5",
-  "FriendlyName": "Silvervine Lua Script Plugin for UE4",
-  "Description": "",
-  "Category": "Scripting",
-  "CreatedBy": "ProjectDH, devCAT, NEXON",
-  "CreatedByURL": "https://devcat.com",
-  "DocsURL": "",
-  "MarketplaceURL": "",
-  "SupportURL": "",
-  "EnabledByDefault": false,
-  "CanContainContent": false,
-  "IsBetaVersion": false,
-  "Installed": false,
-  "CanBeUsedWithUnrealHeaderTool" : true,
+"Modules": [
+    {
+      "Name": "SilvervineUE4Lua",
+      "Type": "Runtime",
+      "LoadingPhase": "PreDefault"
+    },
+    {
+      "Name": "SilvervineUE4LuaEditor",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name" : "SilvervineUE4LuaCodeGen",
+      "Type" : "Program",
+      "LoadingPhase" : "PostConfigInit"
+    }
+  ]
 }
 {% endhighlight %}
 
