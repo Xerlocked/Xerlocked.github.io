@@ -56,9 +56,9 @@ namespace UnrealBuildTool.Rules
 - PCH를 사용중에 있습니다. 파일을 열어보면 아직 따로 헤더가 추가되진 않았고, 파일만 만들어져 있습니다.
 - `SilvervineUE4Lua` 모듈을 필요로 합니다.
 
-<aside>
-📌 모듈을 만들고 `UnrealBuildTool.Rules` 네임스페이스로 묶어주면, 명확하게 관리할 수 있고 UBT 가 인식하므로 해당 모듈의 빌드 설정을 올바르게 처리합니다.
-</aside>
+
+  📌 모듈을 만들고 `UnrealBuildTool.Rules` 네임스페이스로 묶어주면, 명확하게 관리할 수 있고 UBT 가 인식하므로 해당 모듈의 빌드 설정을 올바르게 처리합니다.
+
 
 ## 2.LuaEditor.cpp
 
