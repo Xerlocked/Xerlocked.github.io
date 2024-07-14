@@ -127,15 +127,15 @@ private:
 
 ### ConfigureProperties
 
-> **/** Opens a dialog to configure the factory properties. Return false if user opted out of configuring properties */**
+> Opens a dialog to configure the factory properties. Return false if user opted out of configuring properties
 
 - 해당 함수의 설명을 보면 속성을 구성하기 위한 대화상자를 열고, 사용자가 선택하지 않으면 false를 반환합니다.
 
 ### FactoryCreateNew
 
-- `UFactory` 클래스는 파일을 생성하는 2가지의 함수가 있습니다.
+- `UFactory` 클래스는 파일을 생성하기 위한 두 가지 함수를 제공합니다.
 - 외부의 파일을 가져와서 에셋을 만들 경우는 `FactoryCreateFile`
-- UObject를 구성하는 경우는 `FactoryCreateNew`
+- 새 UObject를 구성하는 경우는 `FactoryCreateNew`
 - 여기서는 `FactoryCreateNew`를 사용했습니다.
 
 다음으로 cpp 파일을 살펴보겠습니다.
@@ -207,7 +207,7 @@ UObject* USUE4LuaVirtualMachineFactory::FactoryCreateNew(UClass* Class, UObject*
 
 크게 세 부분으로 나눌 수 있을 것 같습니다. `생성자`, `ConfigureProperties`, `FactoryCreateNew`
 
-이를 토대로 살펴보겠습니다.
+위를 참고하여 자세히 살펴보겠습니다.
 
 ### 생성자
 
@@ -220,7 +220,7 @@ USUE4LuaVirtualMachineFactory::USUE4LuaVirtualMachineFactory(const FObjectInitia
 }
 {% endhighlight %}
 
-- `bCreateNew`는 `CanCreateNew` 함수에 의해 호출되는데 현재 `Factory`에서 새 객체를 처음부터 만들 수 있는 경우 true입니다.
+- `bCreateNew`는 `CanCreateNew` 함수에 의해 호출되는데 현재 `Factory`에서 새 객체를 처음부터 만들 경우 true입니다.
 - `SupportedClass` 는 현재 Factory 에서 생산하는 클래스를 나타냅니다. 여기는 `LuaVM` 클래스를 생산하고 있습니다.
 
 ### ConfigureProperties
@@ -268,7 +268,7 @@ bool USUE4LuaVirtualMachineFactory::ConfigureProperties()
 - 모듈 매니저를 통해 `ClassViewerModule` 을 로드합니다.
 - 이후 클래스 관련 옵션들을 설정해줍니다.
 - ClassViewerFilter를 설정해줍니다. 이때 필터링하는 클래스는 `LuaVM`입니다.
-- 5.0 버전부터는 `ClassFilter`가 아닌 `ClassFilters` 배열을 통해 처리를 권장합니다.
+- 5.0 버전부터는 `ClassFilter`가 아닌 `ClassFilters` 배열을 통한 처리를 권장합니다.
 - 클래스 선택 다이얼로그를 띄우고 클래스를 선택합니다.
 
 ### FactoryCreateNew
@@ -284,11 +284,11 @@ UObject* USUE4LuaVirtualMachineFactory::FactoryCreateNew(UClass* Class, UObject*
 
 ## 마무리
 
-LuaEditor 모듈에서는 Lua 스크립트 처리에 필요한 VM을 생성하는 코드를 포함하고 있었습니다.
+LuaEditor 모듈에서는 Lua 스크립트 처리에 필요한 uasset VM을 생성하는 코드가 작성되었습니다.
 
 - UFactory로 UObject 생성하기
 - 모듈매니저를 통해 ClassViewerModule를 불러오기
-- 불러온 ClassViewrModule을 통해 VM 클래스 생성하기
+- 불러온 ClassViewrModule을 통해 VM 클래스(uasset) 생성하기
 
 위의 3단계를 거쳐서 VM을 생성하는 것을 알 수 있었습니다.
 
